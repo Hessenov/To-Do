@@ -1,0 +1,12 @@
+.main_div {
+  width: 336px;
+  margin: 0 auto;
+  border: 3px solid #c4c4c4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.color_div {
+  width: 100%;
+  height: 28px;
+  background: #ffdc40;
+}
