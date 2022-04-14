@@ -31,6 +31,17 @@ export default class View {
     return label;
   }
 
+  createParagraph(props) {
+    const p = document.createElement("p");
+
+    props.text && (p.innerText = props.text);
+    props.class && (p.className = props.class);
+    props.id && (p.id = props.id);
+    props.type && (p.type = props.type);
+
+    return p;
+  }
+
   createImg(props) {
     const img = document.createElement("img");
 
@@ -71,6 +82,17 @@ export default class View {
     return button;
   }
 
+  createButtonCirclePlus(props){
+    const div = document.createElement("div")
+
+    props.text && (div.innerText = props.text);
+    props.class && (div.className = props.class);
+    props.id && (div.id = props.id);
+    props.type && (div.type = props.type);
+
+    return div;
+  }
+
   view_init() {
     this.mainDiv = this.createDiv({
       class: "main_div",
@@ -90,6 +112,11 @@ export default class View {
     this.label = this.createLabel({
       class: "label",
       id: "label",
+    });
+
+    this.paragraph = this.createParagraph({
+      class: "paragraph",
+      id: "paragraph",
       text: "To-do list",
     });
 
@@ -115,22 +142,29 @@ export default class View {
       class: "list",
     });
 
-
     this.mainButton = this.createButton({
-      text: "click",
-      class: "main-button",
+      text: "Добавить",
+      class: "mainbutton",
       id: "mainButton",
     });
+
+    this.circlePlis = this.createButtonCirclePlus({
+      text: "+",
+      class: "circlePlus",
+      id: "circlePlus",
+    })
 
     this.root.appendChild(this.mainDiv);
     this.mainDiv.appendChild(this.form);
     this.form.appendChild(this.colorDiv);
     this.form.appendChild(this.label);
+    this.label.appendChild(this.paragraph);
     this.label.appendChild(this.iconButton);
     this.iconButton.appendChild(this.img);
     this.label.appendChild(this.label_input);
     this.form.appendChild(this.ul);
     this.form.appendChild(this.mainButton);
+    this.mainButton.appendChild(this.circlePlis)
   }
 
   updateCounter(newText) {
