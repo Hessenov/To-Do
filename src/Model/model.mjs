@@ -1,3 +1,11 @@
 export default class Model {
-  constructor() {}
+  constructor() {
+    this.arr = [];
+  }
+
+  addArray(inputValue){
+    this.arr.push(inputValue) 
+    
+  }
+  
 }

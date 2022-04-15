@@ -58,6 +58,7 @@ export default class View {
     props.class && (input.className = props.class);
     props.id && (input.id = props.id);
     props.name && (input.name = props.name);
+    props.value && (input.value = props.value)
 
     return input;
   }
@@ -82,8 +83,8 @@ export default class View {
     return button;
   }
 
-  createButtonCirclePlus(props){
-    const div = document.createElement("div")
+  createButtonCirclePlus(props) {
+    const div = document.createElement("div");
 
     props.text && (div.innerText = props.text);
     props.class && (div.className = props.class);
@@ -93,7 +94,16 @@ export default class View {
     return div;
   }
 
-  view_init() {
+  createLi(props) {
+    const li = document.createElement("li");
+
+    props.text && (li.innerHTML = props.text);
+    props.class && (li.className = props.class);
+
+    return li;
+  }
+
+  init() {
     this.mainDiv = this.createDiv({
       class: "main_div",
       id: "main_div",
@@ -122,6 +132,7 @@ export default class View {
 
     this.iconButton = this.createButton({
       id: "sort_button",
+      class: "sort_button",
       type: "button",
     });
 
@@ -146,13 +157,19 @@ export default class View {
       text: "Добавить",
       class: "mainbutton",
       id: "mainButton",
+      type: "submit",
     });
 
     this.circlePlis = this.createButtonCirclePlus({
       text: "+",
       class: "circlePlus",
       id: "circlePlus",
-    })
+    });
+
+    this.clearInputValue = this.createButton({
+      id: "clearInputValue",
+      type: "button",
+    });
 
     this.root.appendChild(this.mainDiv);
     this.mainDiv.appendChild(this.form);
@@ -164,7 +181,7 @@ export default class View {
     this.label.appendChild(this.label_input);
     this.form.appendChild(this.ul);
     this.form.appendChild(this.mainButton);
-    this.mainButton.appendChild(this.circlePlis)
+    this.mainButton.appendChild(this.circlePlis);
   }
 
   updateCounter(newText) {
