@@ -27,6 +27,7 @@
   border: 0;
   width: 100%;
   text-align: end;
+  cursor: pointer;
 }
 img {
   opacity: 0.3;
@@ -66,6 +67,7 @@ img:hover {
   border-radius: 71px;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 .circlePlus {
   order: -1;
@@ -90,4 +92,29 @@ img:hover {
   height: 20px;
   border: 0;
   background-color: white;
+  cursor: pointer;
+}
+
+ul {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 0;
+}
+
+input {
+  border: 0;
+}
+.taskDiv {
+  margin: 8px;
+  list-style-type: none;
+  display: flex;
+  margin-left: 24px;
+}
+.taskInput {
+  width: 83%;
 }

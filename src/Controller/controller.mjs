@@ -15,17 +15,19 @@ export default class Controller {
 
       const data = new FormData(e.target);
       const inputValue = data.get("label_data");
-      this.model.addArray(inputValue);
-      if (inputValue!==""){
-        this.view.label_input.value = ""
+      
+      if (inputValue !== "") {
+        this.model.addArray(inputValue);
+        this.view.label_input.value = "";
       }
       this.render();
+      
     });
   }
 
   render() {
-    this.view.ul.innerHTML ="";
-
+    this.view.ul.innerHTML = "";
+    
     this.model.arr.forEach((el) => {
       this.taskLi = this.view.createLi({
         class: "taskDiv",
@@ -40,13 +42,11 @@ export default class Controller {
       this.deleteButton = this.view.createButton({
         type: "button",
         class: "deleteButton",
-      })
-
-      this.
+      });
 
       this.view.ul.appendChild(this.taskLi);
       this.taskLi.appendChild(this.taskInput);
-      this.taskLi.appendChild(this.deleteButton)
+      this.taskLi.appendChild(this.deleteButton);
     });
   }
 }

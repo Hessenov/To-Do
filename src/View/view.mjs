@@ -58,7 +58,7 @@ export default class View {
     props.class && (input.className = props.class);
     props.id && (input.id = props.id);
     props.name && (input.name = props.name);
-    props.value && (input.value = props.value)
+    props.value && (input.value = props.value);
 
     return input;
   }
@@ -182,9 +182,5 @@ export default class View {
     this.form.appendChild(this.ul);
     this.form.appendChild(this.mainButton);
     this.mainButton.appendChild(this.circlePlis);
-  }
-
-  updateCounter(newText) {
-    this.counterEl.innerText = newText;
   }
 }
