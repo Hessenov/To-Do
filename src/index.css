@@ -1,4 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,wght@1,100&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 .main_div {
   width: 336px;
   margin: 0 auto;
@@ -19,15 +84,18 @@
   text-align: center;
   width: 85%;
   margin: 0 auto;
+  position: relative;
 }
 #sort_button {
   width: 40px;
   height: 20px;
   background-color: white;
   border: 0;
-  width: 100%;
+  width: 30px;
   text-align: end;
   cursor: pointer;
+  float: right;
+  margin-left: 240px;
 }
 img {
   opacity: 0.3;
@@ -87,10 +155,22 @@ img:hover {
   margin-right: 15px;
 }
 .deleteButton {
-  background-image: url(/src/Assets/Images/delete_img.svg);
+  background-image: url("/src/Assets/Images/delete_img.svg");
   width: 20px;
   height: 20px;
   border: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+#clearInputValue {
+  background-image: url("/src/Assets/Images/delete_img.svg");
+  border: 0;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 18px;
+  top: 82px;
   background-color: white;
   cursor: pointer;
 }
@@ -109,6 +189,9 @@ ul {
 input {
   border: 0;
 }
+.input {
+  padding-right: 40px;
+}
 .taskDiv {
   margin: 8px;
   list-style-type: none;
@@ -117,4 +200,10 @@ input {
 }
 .taskInput {
   width: 83%;
+}
+
+.list {
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
 }

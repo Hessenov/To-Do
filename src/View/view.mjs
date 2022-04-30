@@ -138,7 +138,7 @@ export default class View {
 
     this.img = this.createImg({
       id: "sort_img",
-      class: "sort_img",
+      class: "sort_img button-sort",
       src: "/src/Assets/Images/sort_img.svg",
     });
 
@@ -179,6 +179,7 @@ export default class View {
     this.label.appendChild(this.iconButton);
     this.iconButton.appendChild(this.img);
     this.label.appendChild(this.label_input);
+    this.label.appendChild(this.clearInputValue)
     this.form.appendChild(this.ul);
     this.form.appendChild(this.mainButton);
     this.mainButton.appendChild(this.circlePlis);

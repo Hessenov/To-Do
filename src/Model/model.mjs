@@ -7,5 +7,20 @@ export default class Model {
     this.arr.push(inputValue) 
     
   }
+
+  deletTask(selectIndex) {
+    this.arr = this.arr.filter((el, index) => index !== selectIndex);
+  }
   
+  sortTasks() {
+    this.arr = this.arr.sort((a, b) =>
+      a.toLowerCase() < b.toLowerCase() ? -1 : 1
+    );
+  }
+
+  sortTasksReverse() {
+    this.arr = this.arr.sort((a, b) =>
+      a.toLowerCase() < b.toLowerCase() ? 1 : -1
+    );
+  }
 }
