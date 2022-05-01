@@ -23,7 +23,7 @@
   position: relative;
 }
 .sort_button {
-  background-image: url("/src/Assets/Images/sort_img.svg");
+  background-image: url("./Assets/Images/sort_img.svg");
   width: 40px;
   height: 20px;
   background-color: white;
@@ -116,7 +116,7 @@
   margin-right: 15px;
 }
 .deleteButton {
-  background-image: url("/src/Assets/Images/delete_img.svg");
+  background-image: url("./Assets/Images/delete_img.svg");
   width: 20px;
   height: 20px;
   border: 0;
@@ -125,14 +125,14 @@
   background-repeat: no-repeat;
   transition: 0.5s;
 }
-.deleteButton:hover{
+.deleteButton:hover {
   width: 25px;
   height: 25px;
   transition: 0.5s;
 }
 
 #clearInputValue {
-  background-image: url("/src/Assets/Images/delete_img.svg");
+  background-image: url("./Assets/Images/delete_img.svg");
   border: 0;
   height: 20px;
   width: 20px;
@@ -154,6 +154,7 @@ ul {
 
 input {
   border: 0;
+  outline: 0;
 }
 .input {
   padding-right: 40px;

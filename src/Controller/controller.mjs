@@ -75,19 +75,18 @@ export default class Controller {
   sortText() {
     this.view.iconButton.addEventListener("click", (e) => {
       if (e.target.className === "sort_button") {
-        this.model.sortDirect()
-      }else{
-        this.model.sortInverse()
+        this.model.sortDirect();
+      } else {
+        this.model.sortInverse();
       }
-      this.render()
-      this.view.iconButton.classList.toggle("sort_button_reverse")
+      this.render();
+      this.view.iconButton.classList.toggle("sort_button_reverse");
     });
   }
 
-  clearInput(){
+  clearInput() {
     this.view.clearInputValue.addEventListener("click", () => {
-      this.view.label_input.value = ""
-    })
+      this.view.label_input.value = "";
+    });
   }
-
 }
