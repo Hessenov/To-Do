@@ -7,8 +7,8 @@ export default class Controller {
   init() {
     this.view.init();
     this.generalForm();
+    this.sortText();
     this.clearInput();
-    this.buttonSortTask();
   }
 
   generalForm() {
@@ -23,6 +23,8 @@ export default class Controller {
         this.view.label_input.value = "";
       }
       this.render();
+
+      console.log(this.model.arr);
     });
   }
 
@@ -45,12 +47,23 @@ export default class Controller {
         class: "deleteButton",
       });
 
+      if (Boolean(this.taskLi)) {
+        this.view.ul.className = "list";
+      }
+
+      this.taskInput.addEventListener("keyup", (event) => {
+        this.model.changeTask(index, event.target.value);
+        console.log(event.target.value);
+      });
+
       this.deleteButton.addEventListener("click", () => {
-        this.model.deletTask(index);
-        this.render();
-        if (this.view.ul.innerHTML === "") {
-          this.view.ul.className = "";
+        this.model.DelElArr(index);
+
+        if (this.model.arr == "") {
+          this.view.ul.className = "ulDisplayOff";
         }
+        this.render();
+        console.log(this.model.arr);
       });
 
       this.view.ul.appendChild(this.taskLi);
@@ -59,21 +72,22 @@ export default class Controller {
     });
   }
 
-  buttonSortTask() {
+  sortText() {
     this.view.iconButton.addEventListener("click", (e) => {
-      if (e.target.className === "button-sort sort-reverse") {
-        this.model.sortTasksReverse();
-      } else {
-        this.model.sortTasks();
+      if (e.target.className === "sort_button") {
+        this.model.sortDirect()
+      }else{
+        this.model.sortInverse()
       }
-      this.render();
-      e.target.classList.toggle("sort-reverse");
+      this.render()
+      this.view.iconButton.classList.toggle("sort_button_reverse")
     });
   }
 
-  clearInput() {
+  clearInput(){
     this.view.clearInputValue.addEventListener("click", () => {
-      this.view.label_input.value = "";
-    });
+      this.view.label_input.value = ""
+    })
   }
+
 }

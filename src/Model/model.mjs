@@ -8,19 +8,24 @@ export default class Model {
     
   }
 
-  deletTask(selectIndex) {
-    this.arr = this.arr.filter((el, index) => index !== selectIndex);
-  }
-  
-  sortTasks() {
-    this.arr = this.arr.sort((a, b) =>
-      a.toLowerCase() < b.toLowerCase() ? -1 : 1
-    );
+  DelElArr(DelEL){
+    this.arr = this.arr.filter((el,index) => index !== DelEL)
   }
 
-  sortTasksReverse() {
+  changeTask(index, newTask){
+    this.arr[index] = newTask;
+  }
+
+  sortDirect(){
+    this.arr = this.arr.sort((a,b) => 
+    a.toLowerCase() < b.toLowerCase() ? -1 : 1
+    )
+  }
+
+  sortInverse(){
     this.arr = this.arr.sort((a, b) =>
       a.toLowerCase() < b.toLowerCase() ? 1 : -1
-    );
+    )
   }
+
 }

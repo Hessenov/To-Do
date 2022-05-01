@@ -130,17 +130,18 @@ export default class View {
       text: "To-do list",
     });
 
+    this.iconButtonDiv = this.createDiv({
+      id: "iconButtonDiv",
+      class: "iconButtonDiv",
+    });
+
     this.iconButton = this.createButton({
       id: "sort_button",
       class: "sort_button",
       type: "button",
     });
 
-    this.img = this.createImg({
-      id: "sort_img",
-      class: "sort_img button-sort",
-      src: "/src/Assets/Images/sort_img.svg",
-    });
+    
 
     this.label_input = this.createInput({
       id: "input",
@@ -150,7 +151,7 @@ export default class View {
 
     this.ul = this.createUl({
       id: "list",
-      class: "list",
+      class: "ulDisplayOff",
     });
 
     this.mainButton = this.createButton({
@@ -176,8 +177,8 @@ export default class View {
     this.form.appendChild(this.colorDiv);
     this.form.appendChild(this.label);
     this.label.appendChild(this.paragraph);
-    this.label.appendChild(this.iconButton);
-    this.iconButton.appendChild(this.img);
+    this.label.appendChild(this.iconButtonDiv)
+    this.iconButtonDiv.appendChild(this.iconButton);
     this.label.appendChild(this.label_input);
     this.label.appendChild(this.clearInputValue)
     this.form.appendChild(this.ul);
