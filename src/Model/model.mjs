@@ -3,29 +3,27 @@ export default class Model {
     this.arr = [];
   }
 
-  addArray(inputValue){
-    this.arr.push(inputValue) 
-    
+  addArray(inputValue) {
+    this.arr.push(inputValue);
   }
 
-  DelElArr(DelEL){
-    this.arr = this.arr.filter((el,index) => index !== DelEL)
+  DelElArr(DelEL) {
+    this.arr = this.arr.filter((el, index) => index !== DelEL);
   }
 
-  changeTask(index, newTask){
+  changeTask(index, newTask) {
     this.arr[index] = newTask;
   }
 
-  sortDirect(){
-    this.arr = this.arr.sort((a,b) => 
-    a.toLowerCase() < b.toLowerCase() ? -1 : 1
-    )
+  sortDirect() {
+    this.arr = this.arr.sort((a, b) =>
+      a.toLowerCase() < b.toLowerCase() ? -1 : 1
+    );
   }
 
-  sortInverse(){
+  sortInverse() {
     this.arr = this.arr.sort((a, b) =>
       a.toLowerCase() < b.toLowerCase() ? 1 : -1
-    )
+    );
   }
-
 }

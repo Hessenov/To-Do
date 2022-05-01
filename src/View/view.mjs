@@ -141,8 +141,6 @@ export default class View {
       type: "button",
     });
 
-    
-
     this.label_input = this.createInput({
       id: "input",
       class: "input",
@@ -177,10 +175,10 @@ export default class View {
     this.form.appendChild(this.colorDiv);
     this.form.appendChild(this.label);
     this.label.appendChild(this.paragraph);
-    this.label.appendChild(this.iconButtonDiv)
+    this.label.appendChild(this.iconButtonDiv);
     this.iconButtonDiv.appendChild(this.iconButton);
     this.label.appendChild(this.label_input);
-    this.label.appendChild(this.clearInputValue)
+    this.label.appendChild(this.clearInputValue);
     this.form.appendChild(this.ul);
     this.form.appendChild(this.mainButton);
     this.mainButton.appendChild(this.circlePlis);
