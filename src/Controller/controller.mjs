@@ -24,7 +24,6 @@ export default class Controller {
       }
       this.render();
 
-      console.log(this.model.arr);
     });
   }
 
@@ -53,7 +52,6 @@ export default class Controller {
 
       this.taskInput.addEventListener("keyup", (event) => {
         this.model.changeTask(index, event.target.value);
-        console.log(event.target.value);
       });
 
       this.deleteButton.addEventListener("click", () => {
@@ -63,7 +61,6 @@ export default class Controller {
           this.view.ul.className = "ulDisplayOff";
         }
         this.render();
-        console.log(this.model.arr);
       });
 
       this.view.ul.appendChild(this.taskLi);
